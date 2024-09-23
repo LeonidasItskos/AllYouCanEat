@@ -1,5 +1,4 @@
-// 1.20.1	2024-09-23T02:44:30.4357246	All You Can Eat/Block Loot Tables
-88c864845353d3e8ee16fd40a283e84abbcc9b9b data\minecraft\loot_tables\blocks\grass.json
+// 1.20.1	2024-09-23T20:54:37.1649756	All You Can Eat/Block Loot Tables
 5f790d49922a419dfa21d56259919845d1038539 data\allyoucaneat\loot_tables\blocks\tomato_crop.json
 96d4e351e2592adba8947d5c17ebd21dacd75345 data\allyoucaneat\loot_tables\blocks\onion_crop.json
 fe207751687fa734c2a224356bf602d7cf585e1e data\allyoucaneat\loot_tables\blocks\test_block.json

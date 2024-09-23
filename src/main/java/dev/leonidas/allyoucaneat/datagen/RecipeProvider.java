@@ -40,6 +40,16 @@ public class RecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.BREAD  ), conditionsFromItem(Items.BREAD))
                 .offerTo(exporter, new Identifier(getRecipeName(ItemInit.BACON_SANDWICH)));
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, BlockInit.OVEN_BLOCK, 1)
+                .pattern("SSS")
+                .pattern("BFB")
+                .pattern("BBB")
+                .input('S', Items.STONE_SLAB)
+                .input('B', Items.BRICKS)
+                .input('F', Items.FURNACE)
+                .criterion(hasItem(Items.FURNACE), conditionsFromItem(Items.FURNACE))
+                .offerTo(exporter, new Identifier(getRecipeName(BlockInit.OVEN_BLOCK)));
+
 
         offerFoodCookingRecipe(exporter,"smelting", RecipeSerializer.SMELTING,200,ItemInit.BUCKET,ItemInit.CHICKEN_BUCKET,0.7f);
 

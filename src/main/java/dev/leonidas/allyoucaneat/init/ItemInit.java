@@ -44,6 +44,7 @@ public class ItemInit {
 
 
 
+
     // Method for registering Items without needing to type the entire thing every time
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(AllYouCanEat.MOD_ID, name), item);

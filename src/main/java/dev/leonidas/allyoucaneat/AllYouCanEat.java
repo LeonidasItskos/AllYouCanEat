@@ -1,6 +1,7 @@
 package dev.leonidas.allyoucaneat;
 
 import dev.leonidas.allyoucaneat.init.*;
+import dev.leonidas.allyoucaneat.init.ModifyLootTables;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -19,6 +20,7 @@ public class AllYouCanEat implements ModInitializer {
 		BlockEntityInit.registerBlockEntities();
 		ScreenInit.reigsterScreenHandlers();
 		RecipeInit.registerRecipes();
+		ModifyLootTables.registerLootTables();
 
 // MAKE A CUTTER BLOCK THAT IS USED AS A KNIFE
 
