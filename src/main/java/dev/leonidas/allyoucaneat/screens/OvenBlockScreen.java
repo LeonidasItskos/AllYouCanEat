@@ -19,6 +19,7 @@ public class OvenBlockScreen extends HandledScreen<OvenBlockScreenHandler> {
         super(handler, inventory, title);
     }
 
+
     @Override
     protected void init() {
         super.init();

@@ -6,8 +6,10 @@ import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.item.ItemStack;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
@@ -60,6 +62,13 @@ public class OvenBlock extends BlockWithEntity implements BlockEntityProvider{
         builder.add(ON);
     }
 
+    @Override
+    public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
+        if (state.get(OvenBlock.ON)) {
+            world.setBlockState(pos,state.cycle(OvenBlock.ON));
+        }
+        super.onPlaced(world, pos, state, placer, itemStack);
+    }
 
     /* Block Entity */
 
@@ -89,9 +98,9 @@ public class OvenBlock extends BlockWithEntity implements BlockEntityProvider{
             if (screenHandlerFactory != null) {
                 player.openHandledScreen(screenHandlerFactory);
             }
-            if (hand == Hand.MAIN_HAND) {
-                world.setBlockState(pos, state.cycle(ON));
-            }
+//            if (hand == Hand.MAIN_HAND) {
+//                world.setBlockState(pos, state.cycle(ON));
+//            }
         }
 
         return ActionResult.SUCCESS;

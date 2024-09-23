@@ -1,6 +1,8 @@
 package dev.leonidas.allyoucaneat.blocks.entities;
 
 
+import dev.leonidas.allyoucaneat.AllYouCanEat;
+import dev.leonidas.allyoucaneat.blocks.OvenBlock;
 import dev.leonidas.allyoucaneat.init.BlockEntityInit;
 import dev.leonidas.allyoucaneat.recipes.OvenBlockRecipe;
 import dev.leonidas.allyoucaneat.screens.OvenBlockScreenHandler;
@@ -91,14 +93,27 @@ public class OvenBlockEntity extends BlockEntity implements NamedScreenHandlerFa
         this.progress = 0;
     }
 
+    private static void changeBlockState(World world, BlockPos pos, BlockState state) {
+        world.setBlockState(pos,state.cycle(OvenBlock.ON));
+    }
+
+
     public static void tick(World world, BlockPos blockPos, BlockState state, OvenBlockEntity entity) {
         if (world.isClient()) {
             return;
         }
 
+        if (state.get(OvenBlock.ON) && entity.progress == 0) {
+            changeBlockState(world,blockPos,state);
+        } else if (!state.get(OvenBlock.ON) && entity.progress > 0) {
+            changeBlockState(world,blockPos,state);
+        }
+
         if(hasRecipe(entity)) {
+
             entity.progress++;
             markDirty(world, blockPos, state);
+
             if(entity.progress >= entity.maxProgress) {
                 craftItem(entity);
             }
@@ -114,20 +129,20 @@ public class OvenBlockEntity extends BlockEntity implements NamedScreenHandlerFa
             inventory.setStack(i, entity.getStack(i));
         }
 
+        //
+
         Optional<OvenBlockRecipe> recipe = entity.getWorld().getRecipeManager()
                 .getFirstMatch(OvenBlockRecipe.Type.INSTANCE, inventory, entity.getWorld());
 
         if(hasRecipe(entity)) {
-            
-            entity.removeStack(0,1);
-            entity.removeStack(1,1);
-            entity.removeStack(2,1);
-            entity.removeStack(3,1);
-            entity.removeStack(4,1);
-            entity.removeStack(5,1);
-            entity.removeStack(6,1);
-            entity.removeStack(7,1);
-            entity.removeStack(8,1);
+
+
+            int i = 0;
+
+            while (i <= 8) {
+                entity.removeStack(i,1);
+                i++;
+            }
 
 
             entity.setStack(9, new ItemStack(recipe.get().getOutput(null).getItem(),
@@ -146,7 +161,6 @@ public class OvenBlockEntity extends BlockEntity implements NamedScreenHandlerFa
 
         Optional<OvenBlockRecipe> match = entity.getWorld().getRecipeManager()
                 .getFirstMatch(OvenBlockRecipe.Type.INSTANCE, inventory, entity.getWorld());
-
 
         return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
                 && canInsertItemIntoOutputSlot(inventory, match.get().getOutput(null).getItem());
