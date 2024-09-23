@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "allyoucaneat:block/oven_block"
+    },
+    "facing=south": {
+      "model": "allyoucaneat:block/oven_block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "allyoucaneat:block/oven_block",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "allyoucaneat:block/oven_block",
+      "y": 90
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "allyoucaneat:block/test_block"
+    }
+  }
+}

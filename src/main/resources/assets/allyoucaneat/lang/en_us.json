@@ -1,0 +1,14 @@
+{
+  "item.allyoucaneat.bucket": "Bucket",
+  "item.allyoucaneat.chicken_bucket": "Chicken Bucket",
+  "item.allyoucaneat.tomato_seeds": "Tomato Seeds",
+  "item.allyoucaneat.tomato": "Tomato",
+  "item.allyoucaneat.onion_seeds": "Onion Seeds",
+  "item.allyoucaneat.onion": "Onion",
+
+
+  "block.allyoucaneat.test_block": "Test Block",
+  "block.allyoucaneat.oven_block": "Oven",
+
+  "itemgroup.allyoucaneat.creative_tab": "All You Can Eat"
+}

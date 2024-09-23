@@ -1,0 +1,15 @@
+{
+  "type": "allyoucaneat:baking",
+  "ingredients": [
+    {
+      "item": "allyoucaneat:bucket"
+    },
+    {
+      "item": "minecraft:coal"
+    }
+
+  ],
+  "output": {
+    "item": "allyoucaneat:chicken_bucket"
+  }
+}
