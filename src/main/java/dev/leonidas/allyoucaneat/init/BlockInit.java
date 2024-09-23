@@ -24,7 +24,8 @@ public class BlockInit {
 
 
     public static final Block OVEN_BLOCK = registerBlock("oven_block",
-            new OvenBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()));
+            new OvenBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()
+                    .luminance(state -> state.get(OvenBlock.ON) ? 15 : 0)));
 
 
 

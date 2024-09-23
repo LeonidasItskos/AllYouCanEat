@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "allyoucaneat:block/oven_block",
-		"particle": "allyoucaneat:block/oven_block"
+		"0": "allyoucaneat:block/oven_block_on",
+		"particle": "allyoucaneat:block/oven_block_on"
 	},
 	"elements": [
 		{

@@ -10,6 +10,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.state.StateManager;
+import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.*;
@@ -21,6 +22,8 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class OvenBlock extends BlockWithEntity implements BlockEntityProvider{
+
+    public static final BooleanProperty ON = BooleanProperty.of("on");
 
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
 
@@ -52,7 +55,9 @@ public class OvenBlock extends BlockWithEntity implements BlockEntityProvider{
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+
         builder.add(FACING);
+        builder.add(ON);
     }
 
 
@@ -83,6 +88,9 @@ public class OvenBlock extends BlockWithEntity implements BlockEntityProvider{
 
             if (screenHandlerFactory != null) {
                 player.openHandledScreen(screenHandlerFactory);
+            }
+            if (hand == Hand.MAIN_HAND) {
+                world.setBlockState(pos, state.cycle(ON));
             }
         }
 

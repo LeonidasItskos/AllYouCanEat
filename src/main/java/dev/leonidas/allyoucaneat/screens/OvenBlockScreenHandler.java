@@ -1,5 +1,6 @@
 package dev.leonidas.allyoucaneat.screens;
 
+import dev.leonidas.allyoucaneat.blocks.OvenBlock;
 import dev.leonidas.allyoucaneat.init.ScreenInit;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -54,6 +55,7 @@ public class OvenBlockScreenHandler extends ScreenHandler {
     }
 
     public boolean isCrafting() {
+
         return propertyDelegate.get(0) > 0;
     }
 

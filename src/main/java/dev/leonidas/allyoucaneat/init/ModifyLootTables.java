@@ -23,7 +23,7 @@ public class ModifyLootTables {
 
                 LootPool.Builder add_tomato_tograss_builder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.10f))
+                        .conditionally(RandomChanceLootCondition.builder(0.50f))
                         .with(ItemEntry.builder(ItemInit.TOMATO_SEEDS))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f,2.0f)).build());
                 tableBuilder.pool(add_tomato_tograss_builder.build());
@@ -34,7 +34,7 @@ public class ModifyLootTables {
             if(GRASS_BLOCK_ID.equals(id)) {
                 LootPool.Builder grassPoolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.10f))
+                        .conditionally(RandomChanceLootCondition.builder(0.50f))
                         .with(ItemEntry.builder(ItemInit.ONION_SEEDS))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f,2.0f)).build());
                 tableBuilder.pool(grassPoolBuilder.build());
