@@ -31,6 +31,7 @@ public class OvenBlock extends BlockWithEntity implements BlockEntityProvider{
 
     public OvenBlock(Settings settings) {
         super(settings);
+        this.setDefaultState(this.getDefaultState().with(ON,false));
     }
 
     private static VoxelShape SHAPE = Block.createCuboidShape(0,0,0,16,14,16);
@@ -62,14 +63,6 @@ public class OvenBlock extends BlockWithEntity implements BlockEntityProvider{
         builder.add(ON);
     }
 
-    @Override
-    public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
-        if (state.get(OvenBlock.ON)) {
-            world.setBlockState(pos,state.cycle(OvenBlock.ON));
-        }
-        super.onPlaced(world, pos, state, placer, itemStack);
-    }
-
     /* Block Entity */
 
     @Override
@@ -98,9 +91,7 @@ public class OvenBlock extends BlockWithEntity implements BlockEntityProvider{
             if (screenHandlerFactory != null) {
                 player.openHandledScreen(screenHandlerFactory);
             }
-//            if (hand == Hand.MAIN_HAND) {
-//                world.setBlockState(pos, state.cycle(ON));
-//            }
+
         }
 
         return ActionResult.SUCCESS;
