@@ -1,15 +1,12 @@
-package dev.leonidas.allyoucaneat.blocks;
+package dev.leonidas.allyoucaneat.blocks.oven_block;
 
-import dev.leonidas.allyoucaneat.blocks.entities.OvenBlockEntity;
-import dev.leonidas.allyoucaneat.init.BlockEntityInit;
+import dev.leonidas.allyoucaneat.blocks.BlockEntityInit;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.item.ItemStack;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;

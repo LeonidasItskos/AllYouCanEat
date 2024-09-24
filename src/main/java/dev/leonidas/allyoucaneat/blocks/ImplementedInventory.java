@@ -1,4 +1,4 @@
-package dev.leonidas.allyoucaneat.blocks.entities;
+package dev.leonidas.allyoucaneat.blocks;
 
 
 import net.minecraft.entity.player.PlayerEntity;

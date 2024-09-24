@@ -1,6 +1,8 @@
-package dev.leonidas.allyoucaneat.init;
+package dev.leonidas.allyoucaneat.utils;
 
 import dev.leonidas.allyoucaneat.AllYouCanEat;
+import dev.leonidas.allyoucaneat.blocks.BlockInit;
+import dev.leonidas.allyoucaneat.items.ItemInit;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;

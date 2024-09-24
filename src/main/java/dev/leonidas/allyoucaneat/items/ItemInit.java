@@ -1,12 +1,10 @@
-package dev.leonidas.allyoucaneat.init;
+package dev.leonidas.allyoucaneat.items;
 
 import dev.leonidas.allyoucaneat.AllYouCanEat;
-import net.fabricmc.fabric.api.item.v1.FabricItem;
+import dev.leonidas.allyoucaneat.blocks.BlockInit;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.AliasedBlockItem;
-import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
-import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;

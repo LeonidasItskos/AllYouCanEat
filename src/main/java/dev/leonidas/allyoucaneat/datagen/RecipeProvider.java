@@ -1,14 +1,12 @@
 package dev.leonidas.allyoucaneat.datagen;
 
-import dev.leonidas.allyoucaneat.init.BlockInit;
-import dev.leonidas.allyoucaneat.init.ItemInit;
+import dev.leonidas.allyoucaneat.blocks.BlockInit;
+import dev.leonidas.allyoucaneat.items.ItemInit;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.data.server.recipe.CookingRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.item.Items;
-import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.util.Identifier;

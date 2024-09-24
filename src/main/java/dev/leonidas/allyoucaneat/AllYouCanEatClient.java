@@ -1,8 +1,8 @@
 package dev.leonidas.allyoucaneat;
 
-import dev.leonidas.allyoucaneat.init.BlockInit;
-import dev.leonidas.allyoucaneat.init.ScreenInit;
-import dev.leonidas.allyoucaneat.screens.OvenBlockScreen;
+import dev.leonidas.allyoucaneat.blocks.BlockInit;
+import dev.leonidas.allyoucaneat.utils.ScreenInit;
+import dev.leonidas.allyoucaneat.screens.oven_screens.OvenBlockScreen;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;

@@ -1,7 +1,7 @@
-package dev.leonidas.allyoucaneat.init;
+package dev.leonidas.allyoucaneat.blocks;
 
 import dev.leonidas.allyoucaneat.AllYouCanEat;
-import dev.leonidas.allyoucaneat.blocks.entities.OvenBlockEntity;
+import dev.leonidas.allyoucaneat.blocks.oven_block.OvenBlockEntity;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.registry.Registries;

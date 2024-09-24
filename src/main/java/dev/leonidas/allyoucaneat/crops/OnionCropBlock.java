@@ -1,6 +1,6 @@
 package dev.leonidas.allyoucaneat.crops;
 
-import dev.leonidas.allyoucaneat.init.ItemInit;
+import dev.leonidas.allyoucaneat.items.ItemInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CropBlock;

@@ -1,8 +1,7 @@
-package dev.leonidas.allyoucaneat.init;
+package dev.leonidas.allyoucaneat.blocks;
 
 import dev.leonidas.allyoucaneat.AllYouCanEat;
-import dev.leonidas.allyoucaneat.blocks.OnPlaceBlock;
-import dev.leonidas.allyoucaneat.blocks.OvenBlock;
+import dev.leonidas.allyoucaneat.blocks.oven_block.OvenBlock;
 import dev.leonidas.allyoucaneat.crops.OnionCropBlock;
 import dev.leonidas.allyoucaneat.crops.TomatoCropBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -20,7 +19,7 @@ public class BlockInit {
 
     // ON PLACE
     public static final Block TEST_BLOCK = registerBlock("test_block",
-            new OnPlaceBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).sounds(BlockSoundGroup.AMETHYST_BLOCK)));
+            new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).sounds(BlockSoundGroup.AMETHYST_BLOCK)));
 
 
     public static final Block OVEN_BLOCK = registerBlock("oven_block",

@@ -1,5 +1,6 @@
-package dev.leonidas.allyoucaneat.init;
+package dev.leonidas.allyoucaneat.utils;
 
+import dev.leonidas.allyoucaneat.items.ItemInit;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.condition.RandomChanceLootCondition;

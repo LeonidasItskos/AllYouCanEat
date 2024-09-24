@@ -1,7 +1,10 @@
 package dev.leonidas.allyoucaneat;
 
-import dev.leonidas.allyoucaneat.init.*;
-import dev.leonidas.allyoucaneat.init.ModifyLootTables;
+import dev.leonidas.allyoucaneat.blocks.BlockEntityInit;
+import dev.leonidas.allyoucaneat.blocks.BlockInit;
+import dev.leonidas.allyoucaneat.items.ItemInit;
+import dev.leonidas.allyoucaneat.utils.*;
+import dev.leonidas.allyoucaneat.utils.ModifyLootTables;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;

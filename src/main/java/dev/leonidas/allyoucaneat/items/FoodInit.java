@@ -1,4 +1,4 @@
-package dev.leonidas.allyoucaneat.init;
+package dev.leonidas.allyoucaneat.items;
 
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;

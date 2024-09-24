@@ -2,8 +2,8 @@ package dev.leonidas.allyoucaneat.datagen;
 
 import dev.leonidas.allyoucaneat.crops.OnionCropBlock;
 import dev.leonidas.allyoucaneat.crops.TomatoCropBlock;
-import dev.leonidas.allyoucaneat.init.BlockInit;
-import dev.leonidas.allyoucaneat.init.ItemInit;
+import dev.leonidas.allyoucaneat.blocks.BlockInit;
+import dev.leonidas.allyoucaneat.items.ItemInit;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.BlockStateModelGenerator;

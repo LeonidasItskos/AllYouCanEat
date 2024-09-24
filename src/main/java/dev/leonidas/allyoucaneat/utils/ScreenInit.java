@@ -1,6 +1,6 @@
-package dev.leonidas.allyoucaneat.init;
+package dev.leonidas.allyoucaneat.utils;
 
-import dev.leonidas.allyoucaneat.screens.OvenBlockScreenHandler;
+import dev.leonidas.allyoucaneat.screens.oven_screens.OvenBlockScreenHandler;
 import net.minecraft.screen.ScreenHandlerType;
 
 public class ScreenInit {

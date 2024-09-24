@@ -1,11 +1,10 @@
-package dev.leonidas.allyoucaneat.blocks.entities;
+package dev.leonidas.allyoucaneat.blocks.oven_block;
 
 
-import dev.leonidas.allyoucaneat.AllYouCanEat;
-import dev.leonidas.allyoucaneat.blocks.OvenBlock;
-import dev.leonidas.allyoucaneat.init.BlockEntityInit;
+import dev.leonidas.allyoucaneat.blocks.ImplementedInventory;
+import dev.leonidas.allyoucaneat.blocks.BlockEntityInit;
 import dev.leonidas.allyoucaneat.recipes.OvenBlockRecipe;
-import dev.leonidas.allyoucaneat.screens.OvenBlockScreenHandler;
+import dev.leonidas.allyoucaneat.screens.oven_screens.OvenBlockScreenHandler;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -18,9 +17,6 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
@@ -29,7 +25,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
-public class OvenBlockEntity extends BlockEntity implements NamedScreenHandlerFactory,ImplementedInventory {
+public class OvenBlockEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory {
 
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(10,ItemStack.EMPTY);
 

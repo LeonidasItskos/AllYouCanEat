@@ -1,4 +1,4 @@
-package dev.leonidas.allyoucaneat.init;
+package dev.leonidas.allyoucaneat.utils;
 
 import dev.leonidas.allyoucaneat.AllYouCanEat;
 import dev.leonidas.allyoucaneat.recipes.OvenBlockRecipe;
