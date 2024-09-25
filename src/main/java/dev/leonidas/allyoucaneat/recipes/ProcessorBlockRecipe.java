@@ -31,14 +31,9 @@ public class ProcessorBlockRecipe implements Recipe<SimpleInventory> {
         if (world.isClient()) {
             return false;
         }
-
-        AllYouCanEat.LOGGER.info(recipeItems.size() + " PROC");
+        
         if (recipeItems.size() == 1) {
 
-            return recipeItems.get(0).test(inventory.getStack(0));
-
-
-        } else if (recipeItems.size() == 2) {
             return recipeItems.get(0).test(inventory.getStack(0));
 
         } else {

@@ -17,20 +17,24 @@ public class ProcessorBlockScreenHandler extends ScreenHandler {
     private final PropertyDelegate propertyDelegate;
 
     public ProcessorBlockScreenHandler(int syncId, PlayerInventory inventory) {
-        this(syncId, inventory, new SimpleInventory(2), new ArrayPropertyDelegate(2));
+        this(syncId, inventory, new SimpleInventory(4), new ArrayPropertyDelegate(2));
     }
 
     public ProcessorBlockScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate delegate) {
         super(ScreenInit.PROCESSOR_BLOCK_SCREEN_HANDLER, syncId);
-        checkSize(inventory, 2);
+        checkSize(inventory, 4);
         this.inventory = inventory;
         inventory.onOpen(playerInventory.player);
         this.propertyDelegate = delegate;
 
         // SLOTS
 
-        this.addSlot(new Slot(inventory, 0, 69, 30));
-        this.addSlot(new Slot(inventory, 1, 134, 38));
+        this.addSlot(new Slot(inventory, 0, 80, 11));
+
+        this.addSlot(new Slot(inventory, 1, 59, 59));
+        this.addSlot(new Slot(inventory, 2, 80, 59));
+        this.addSlot(new Slot(inventory, 3, 101, 59));
+
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);

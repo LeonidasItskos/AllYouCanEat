@@ -1,5 +1,6 @@
 package dev.leonidas.allyoucaneat.blocks.processor_block;
 
+import dev.leonidas.allyoucaneat.AllYouCanEat;
 import dev.leonidas.allyoucaneat.blocks.BlockEntityInit;
 import dev.leonidas.allyoucaneat.blocks.ImplementedInventory;
 import dev.leonidas.allyoucaneat.recipes.ProcessorBlockRecipe;
@@ -12,6 +13,7 @@ import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.PropertyDelegate;
@@ -23,14 +25,16 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
+import java.util.Random;
 
 public class ProcessorBlockEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory {
 
-    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(2,ItemStack.EMPTY);
+    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(4,ItemStack.EMPTY);
 
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
-    private int maxProgress = 72;
+    private int maxProgress = 5;
+    static Random rand = new Random();
 
     public ProcessorBlockEntity(BlockPos pos, BlockState state) {
         super(BlockEntityInit.PROCESSOR_BLOCK, pos, state);
@@ -116,8 +120,20 @@ public class ProcessorBlockEntity extends BlockEntity implements NamedScreenHand
 
             entity.removeStack(0,1);
 
-            entity.setStack(1, new ItemStack(recipe.get().getOutput(null).getItem(),
-                    entity.getStack(1).getCount() + 1));
+            entity.setStack(2, new ItemStack(recipe.get().getOutput(null).getItem(),
+                    entity.getStack(2).getCount() + 1));
+
+            if (inventory.getStack(1).getItem() == Items.BONE && inventory.getStack(1).getCount() + 1 <= 64 || inventory.getStack(1).isEmpty()) {
+
+                int randint = rand.nextInt(3);
+                entity.setStack(1, new ItemStack(Items.BONE, entity.getStack(1).getCount() + randint));
+            }
+
+            if (inventory.getStack(3).getItem() == Items.LEATHER && inventory.getStack(3).getCount() + 1 <= 64 || inventory.getStack(3).isEmpty()) {
+
+                int randint = rand.nextInt(3);
+                entity.setStack(3, new ItemStack(Items.LEATHER, entity.getStack(3).getCount() + randint));
+            }
 
             entity.resetProgress();
         }
@@ -139,12 +155,12 @@ public class ProcessorBlockEntity extends BlockEntity implements NamedScreenHand
     // Checks if the result of what we're trying to smelt already exists in output slot or output slot empty
 
     private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, Item output) {
-        return inventory.getStack(1).getItem() == output || inventory.getStack(1).isEmpty();
+        return inventory.getStack(2).getItem() == output || inventory.getStack(2).isEmpty();
     }
 
     // Checks if output slot full
     private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory) {
-        return inventory.getStack(1).getMaxCount() > inventory.getStack(1).getCount();
+        return inventory.getStack(2).getMaxCount() > inventory.getStack(2).getCount();
     }
 
     private void resetProgress() {
