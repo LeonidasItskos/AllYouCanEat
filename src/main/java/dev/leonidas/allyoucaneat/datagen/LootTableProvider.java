@@ -27,6 +27,8 @@ public class LootTableProvider extends FabricBlockLootTableProvider {
 //                .apply(SetCountLootFunction.builder(
 //                        UniformLootNumberProvider.create(10f,50f))));
 
+
+
         addDrop(BlockInit.TEST_BLOCK);
 
 
