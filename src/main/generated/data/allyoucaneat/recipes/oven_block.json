@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:bricks"
+    },
+    "F": {
+      "item": "minecraft:furnace"
+    },
+    "S": {
+      "item": "minecraft:stone_slab"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "BFB",
+    "BBB"
+  ],
+  "result": {
+    "item": "allyoucaneat:oven_block"
+  },
+  "show_notification": true
+}
