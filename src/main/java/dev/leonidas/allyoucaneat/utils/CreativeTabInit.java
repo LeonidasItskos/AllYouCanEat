@@ -23,6 +23,7 @@ public class CreativeTabInit {
 
                         entries.add(BlockInit.TEST_BLOCK);
                         entries.add(BlockInit.OVEN_BLOCK);
+                        entries.add(BlockInit.PROCESSOR_BLOCK);
 
                         entries.add(ItemInit.BUCKET);
                         entries.add(ItemInit.CHICKEN_BUCKET);

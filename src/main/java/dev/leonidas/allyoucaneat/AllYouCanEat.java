@@ -3,6 +3,8 @@ package dev.leonidas.allyoucaneat;
 import dev.leonidas.allyoucaneat.blocks.BlockEntityInit;
 import dev.leonidas.allyoucaneat.blocks.BlockInit;
 import dev.leonidas.allyoucaneat.items.ItemInit;
+import dev.leonidas.allyoucaneat.recipes.RecipeInit;
+import dev.leonidas.allyoucaneat.screens.ScreenInit;
 import dev.leonidas.allyoucaneat.utils.*;
 import dev.leonidas.allyoucaneat.utils.ModifyLootTables;
 import net.fabricmc.api.ModInitializer;

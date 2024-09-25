@@ -17,7 +17,11 @@ public class BlockTagProvider extends FabricTagProvider.BlockTagProvider {
     protected void configure(RegistryWrapper.WrapperLookup arg) {
 
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
-                .add(BlockInit.TEST_BLOCK);
+                .add(BlockInit.TEST_BLOCK)
+                .add(BlockInit.OVEN_BLOCK)
+                .add(BlockInit.PROCESSOR_BLOCK);
+
+
 
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
                 .add(BlockInit.TEST_BLOCK);

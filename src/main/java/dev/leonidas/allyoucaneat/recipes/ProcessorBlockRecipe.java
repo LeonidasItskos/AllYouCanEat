@@ -13,13 +13,13 @@ import net.minecraft.util.JsonHelper;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 
-public class OvenBlockRecipe implements Recipe<SimpleInventory> {
+public class ProcessorBlockRecipe implements Recipe<SimpleInventory> {
 
     private final Identifier id;
     private final ItemStack output;
     private final DefaultedList<Ingredient> recipeItems;
 
-    public OvenBlockRecipe(Identifier id, ItemStack output, DefaultedList<Ingredient> recipeItems) {
+    public ProcessorBlockRecipe(Identifier id, ItemStack output, DefaultedList<Ingredient> recipeItems) {
         this.id = id;
         this.output = output;
         this.recipeItems = recipeItems;
@@ -31,18 +31,16 @@ public class OvenBlockRecipe implements Recipe<SimpleInventory> {
         if (world.isClient()) {
             return false;
         }
-        AllYouCanEat.LOGGER.info(recipeItems.size() + " OVEN");
-        if (recipeItems.size() == 9) {
 
-            return  recipeItems.get(0).test(inventory.getStack(0)) &&
-                    recipeItems.get(1).test(inventory.getStack(1)) &&
-                    recipeItems.get(2).test(inventory.getStack(2)) &&
-                    recipeItems.get(3).test(inventory.getStack(3)) &&
-                    recipeItems.get(4).test(inventory.getStack(4)) &&
-                    recipeItems.get(5).test(inventory.getStack(5)) &&
-                    recipeItems.get(6).test(inventory.getStack(6)) &&
-                    recipeItems.get(7).test(inventory.getStack(7)) &&
-                    recipeItems.get(8).test(inventory.getStack(8));
+        AllYouCanEat.LOGGER.info(recipeItems.size() + " PROC");
+        if (recipeItems.size() == 1) {
+
+            return recipeItems.get(0).test(inventory.getStack(0));
+
+
+        } else if (recipeItems.size() == 2) {
+            return recipeItems.get(0).test(inventory.getStack(0));
+
         } else {
             return false;
         }
@@ -79,34 +77,34 @@ public class OvenBlockRecipe implements Recipe<SimpleInventory> {
         return Type.INSTANCE;
     }
 
-    public static class Type implements RecipeType<OvenBlockRecipe> {
+    public static class Type implements RecipeType<ProcessorBlockRecipe> {
         private Type() { }
         public static final Type INSTANCE = new Type();
-        public static final String ID = "baking";
+        public static final String ID = "processing";
     }
 
-    public static class Serializer implements RecipeSerializer<OvenBlockRecipe> {
+    public static class Serializer implements RecipeSerializer<ProcessorBlockRecipe> {
         public static final Serializer INSTANCE = new Serializer();
-        public static final String ID = "baking";
+        public static final String ID = "processing";
 
         @Override
-        public OvenBlockRecipe read(Identifier id, JsonObject json) {
+        public ProcessorBlockRecipe read(Identifier id, JsonObject json) {
             ItemStack output = ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "output"));
 
             JsonArray ingredients = JsonHelper.getArray(json, "ingredients");
-            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(9, Ingredient.EMPTY);
+            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(1, Ingredient.EMPTY);
 
 //            for (int i = 0; i < inputs.size(); i++) {
-              for (int i = 0; i < ingredients.size() && i <= inputs.size(); i++) {
+            for (int i = 0; i < ingredients.size(); i++) {
 
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
             }
 
-            return new OvenBlockRecipe(id, output, inputs);
+            return new ProcessorBlockRecipe(id, output, inputs);
         }
 
         @Override
-        public OvenBlockRecipe read(Identifier id, PacketByteBuf buf) {
+        public ProcessorBlockRecipe read(Identifier id, PacketByteBuf buf) {
             DefaultedList<Ingredient> inputs = DefaultedList.ofSize(buf.readInt(), Ingredient.EMPTY);
 
             for (int i = 0; i < inputs.size(); i++) {
@@ -114,11 +112,11 @@ public class OvenBlockRecipe implements Recipe<SimpleInventory> {
             }
 
             ItemStack output = buf.readItemStack();
-            return new OvenBlockRecipe(id, output, inputs);
+            return new ProcessorBlockRecipe(id, output, inputs);
         }
 
         @Override
-        public void write(PacketByteBuf buf, OvenBlockRecipe recipe) {
+        public void write(PacketByteBuf buf, ProcessorBlockRecipe recipe) {
             buf.writeInt(recipe.getIngredients().size());
             for (Ingredient ing : recipe.getIngredients()) {
                 ing.write(buf);

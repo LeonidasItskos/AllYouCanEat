@@ -1,7 +1,8 @@
 package dev.leonidas.allyoucaneat;
 
 import dev.leonidas.allyoucaneat.blocks.BlockInit;
-import dev.leonidas.allyoucaneat.utils.ScreenInit;
+import dev.leonidas.allyoucaneat.screens.processor_screens.ProcessorBlockScreen;
+import dev.leonidas.allyoucaneat.screens.ScreenInit;
 import dev.leonidas.allyoucaneat.screens.oven_screens.OvenBlockScreen;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
@@ -15,6 +16,7 @@ public class AllYouCanEatClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.ONION_CROP, RenderLayer.getCutout());
 
         HandledScreens.register(ScreenInit.OVEN_BLOCK_SCREEN_HANDLER, OvenBlockScreen::new);
+        HandledScreens.register(ScreenInit.PROCESSOR_BLOCK_SCREEN_HANDLER, ProcessorBlockScreen::new);
 
     }
 }

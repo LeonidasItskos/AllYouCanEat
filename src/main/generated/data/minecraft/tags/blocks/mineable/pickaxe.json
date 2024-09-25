@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "allyoucaneat:test_block"
+    "allyoucaneat:test_block",
+    "allyoucaneat:oven_block",
+    "allyoucaneat:processor_block"
   ]
 }

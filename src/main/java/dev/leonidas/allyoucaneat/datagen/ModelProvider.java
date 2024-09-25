@@ -19,6 +19,7 @@ public class ModelProvider extends FabricModelProvider {
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
 
         blockStateModelGenerator.registerSimpleCubeAll(BlockInit.TEST_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(BlockInit.PROCESSOR_BLOCK);
 
 
 

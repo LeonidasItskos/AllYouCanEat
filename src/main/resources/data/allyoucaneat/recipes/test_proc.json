@@ -1,0 +1,12 @@
+{
+  "type": "allyoucaneat:processing",
+  "ingredients": [
+    {
+      "item": "allyoucaneat:bucket"
+    }
+
+  ],
+  "output": {
+    "item": "allyoucaneat:chicken_bucket"
+  }
+}

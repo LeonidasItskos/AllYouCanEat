@@ -2,6 +2,7 @@ package dev.leonidas.allyoucaneat.blocks;
 
 import dev.leonidas.allyoucaneat.AllYouCanEat;
 import dev.leonidas.allyoucaneat.blocks.oven_block.OvenBlock;
+import dev.leonidas.allyoucaneat.blocks.processor_block.ProcessorBlock;
 import dev.leonidas.allyoucaneat.crops.OnionCropBlock;
 import dev.leonidas.allyoucaneat.crops.TomatoCropBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -25,6 +26,9 @@ public class BlockInit {
     public static final Block OVEN_BLOCK = registerBlock("oven_block",
             new OvenBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()
                     .luminance(state -> state.get(OvenBlock.ON) ? 15 : 0)));
+
+    public static final Block PROCESSOR_BLOCK = registerBlock("processor_block",
+            new ProcessorBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()));
 
 
 

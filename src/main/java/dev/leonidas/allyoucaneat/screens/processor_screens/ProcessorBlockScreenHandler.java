@@ -1,4 +1,4 @@
-package dev.leonidas.allyoucaneat.screens.oven_screens;
+package dev.leonidas.allyoucaneat.screens.processor_screens;
 
 import dev.leonidas.allyoucaneat.screens.ScreenInit;
 import net.minecraft.entity.player.PlayerEntity;
@@ -11,41 +11,30 @@ import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 
-public class OvenBlockScreenHandler extends ScreenHandler {
+public class ProcessorBlockScreenHandler extends ScreenHandler {
 
     private final Inventory inventory;
     private final PropertyDelegate propertyDelegate;
 
-    public OvenBlockScreenHandler(int syncId, PlayerInventory inventory) {
-        this(syncId, inventory, new SimpleInventory(10), new ArrayPropertyDelegate(2));
+    public ProcessorBlockScreenHandler(int syncId, PlayerInventory inventory) {
+        this(syncId, inventory, new SimpleInventory(2), new ArrayPropertyDelegate(2));
     }
 
-    public OvenBlockScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate delegate) {
-        super(ScreenInit.OVEN_BLOCK_SCREEN_HANDLER, syncId);
-        checkSize(inventory, 10);
+    public ProcessorBlockScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate delegate) {
+        super(ScreenInit.PROCESSOR_BLOCK_SCREEN_HANDLER, syncId);
+        checkSize(inventory, 2);
         this.inventory = inventory;
         inventory.onOpen(playerInventory.player);
         this.propertyDelegate = delegate;
 
         // SLOTS
 
-        this.addSlot(new Slot(inventory, 0, 33, 12));
-        this.addSlot(new Slot(inventory, 1, 51, 12));
-        this.addSlot(new Slot(inventory, 2, 69, 12));
-
-        this.addSlot(new Slot(inventory, 3, 33, 30));
-        this.addSlot(new Slot(inventory, 4, 51, 30));
-        this.addSlot(new Slot(inventory, 5, 69, 30));
-
-        this.addSlot(new Slot(inventory, 6, 33, 48));
-        this.addSlot(new Slot(inventory, 7, 51, 48));
-        this.addSlot(new Slot(inventory, 8, 69, 48));
-
-        this.addSlot(new Slot(inventory, 9, 134, 37));
-
+        this.addSlot(new Slot(inventory, 0, 69, 30));
+        this.addSlot(new Slot(inventory, 1, 134, 38));
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
+
 
         addProperties(delegate);
 
