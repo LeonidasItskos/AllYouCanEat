@@ -33,6 +33,8 @@ public class CreativeTabInit {
                         entries.add(ItemInit.ONION);
                         entries.add(ItemInit.ONION_SEEDS);
 
+                        entries.add(ItemInit.DEAD_COW);
+
 
 
 

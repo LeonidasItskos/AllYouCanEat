@@ -40,6 +40,7 @@ public class ModelProvider extends FabricModelProvider {
 
         itemModelGenerator.register(ItemInit.TOMATO, Models.GENERATED);
         itemModelGenerator.register(ItemInit.ONION, Models.GENERATED);
+        itemModelGenerator.register(ItemInit.DEAD_COW, Models.GENERATED);
 
     }
 }

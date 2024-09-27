@@ -15,6 +15,7 @@ public class AllYouCanEatClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.TOMATO_CROP, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.ONION_CROP, RenderLayer.getCutout());
 
+
         HandledScreens.register(ScreenInit.OVEN_BLOCK_SCREEN_HANDLER, OvenBlockScreen::new);
         HandledScreens.register(ScreenInit.PROCESSOR_BLOCK_SCREEN_HANDLER, ProcessorBlockScreen::new);
 

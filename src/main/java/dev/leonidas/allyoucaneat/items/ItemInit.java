@@ -14,6 +14,8 @@ public class ItemInit {
     // ITEMS
     public static final Item BUCKET = registerItem("bucket", new Item(new FabricItemSettings()));
 
+    public static final Item DEAD_COW = registerItem("dead_cow", new Item(new FabricItemSettings()));
+
 
 
     // FOOD ITEMS
@@ -22,8 +24,6 @@ public class ItemInit {
 
     public static final Item BACON_SANDWICH = registerItem("bacon_sandwich", new Item(new FabricItemSettings()
             .food(FoodInit.BACON_SANDWICH)));
-
-
 
 
     // CROPS

@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
+import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.book.RecipeCategory;
@@ -48,6 +49,12 @@ public class RecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.FURNACE), conditionsFromItem(Items.FURNACE))
                 .offerTo(exporter, new Identifier(getRecipeName(BlockInit.OVEN_BLOCK)));
 
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, BlockInit.PROCESSOR_BLOCK,1)
+                .input(Items.BRICKS, 1)
+                .input(Items.STONE,2)
+                        .criterion(hasItem(Items.STONE), conditionsFromItem(Items.STONE))
+                                .offerTo(exporter, new Identifier(getRecipeName(BlockInit.PROCESSOR_BLOCK)));
+        //offerShapelessRecipe(exporter,BlockInit.PROCESSOR_BLOCK,Items.BRICKS,"test",1);
 
         offerFoodCookingRecipe(exporter,"smelting", RecipeSerializer.SMELTING,200,ItemInit.BUCKET,ItemInit.CHICKEN_BUCKET,0.7f);
 
